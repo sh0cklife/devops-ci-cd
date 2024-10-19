@@ -16,19 +16,20 @@ jobs:
     - name: Install NodeJS 
       uses: actions/setup-node@v4
       with:
-        node-version: 21
+        node-version: 20
     - name: Install Dependencies
       run: npm install
     
   test:
     runs-on: ubuntu-latest
+    needs: build
     steps:
     - name: Chekout the code
       uses: actions/checkout@v4
     - name: Install NodeJS
       uses: actions/setup-node@v4
       with:
-        node-version: 21
+        node-version: 20
     - name: Install Dependencies
       run: npm install
     - name: Execute Integration Tests
