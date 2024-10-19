@@ -18,4 +18,5 @@ jobs:
         node-version: 21
     - name: Install Dependencies
       run: npm install
-    - run: npm run test
+    - name: Execute Integration Tests
+      run: npm run test
